@@ -1,0 +1,4 @@
+enum GenreEnum
+{
+    PersonalGrowth
+}
