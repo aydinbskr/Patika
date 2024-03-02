@@ -64,20 +64,13 @@ namespace WebAPI.Controllers
         public IActionResult AddBook([FromBody] CreateBookModel bookModel)
         {
             CreateBookCommand createBookCommand = new CreateBookCommand(_appDbContext);
-            try
-            {
-                createBookCommand.Model = bookModel;
-                CreateBookValidator validator = new CreateBookValidator();
-                ValidationResult result=validator.Validate(createBookCommand);
+            createBookCommand.Model = bookModel;
+            CreateBookValidator validator = new CreateBookValidator();
+            ValidationResult result = validator.Validate(createBookCommand);
 
-                validator.ValidateAndThrow(createBookCommand);
-                createBookCommand.Handle();
-            }
-            catch (Exception ex)
-            {
+            validator.ValidateAndThrow(createBookCommand);
+            createBookCommand.Handle();
 
-                return BadRequest(ex.Message);
-            }
             return Ok();
         }
 

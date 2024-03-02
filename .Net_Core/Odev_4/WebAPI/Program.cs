@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Middlewares;
 using WebAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,6 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-
+app.UseMiddleware<CustomExceptionMiddleware>();
 
 app.Run();
