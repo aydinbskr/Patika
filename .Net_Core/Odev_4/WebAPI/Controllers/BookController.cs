@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.BookOperations.CreateBook;
 using WebAPI.BookOperations.DeleteBook;
 using WebAPI.BookOperations.GetBookDetail;
 using WebAPI.BookOperations.GetBooks;
 using WebAPI.BookOperations.Updatebook;
 using WebAPI.Models;
+using WebAPI.Validators;
 using static WebAPI.BookOperations.CreateBook.CreateBookCommand;
 using static WebAPI.BookOperations.GetBookDetail.GetBookDetailQuery;
 using static WebAPI.BookOperations.Updatebook.UpdateBookCommand;
@@ -42,6 +45,10 @@ namespace WebAPI.Controllers
             {
                 GetBookDetailQuery getBookDetailQuery = new GetBookDetailQuery(_appDbContext);
                 getBookDetailQuery.BookId = id;
+                GetBookValidator validator = new GetBookValidator();
+                ValidationResult result = validator.Validate(getBookDetailQuery);
+
+                validator.ValidateAndThrow(getBookDetailQuery);
                 bookDetailViewModel = getBookDetailQuery.Handle();
             }
             catch (Exception ex)
@@ -60,6 +67,10 @@ namespace WebAPI.Controllers
             try
             {
                 createBookCommand.Model = bookModel;
+                CreateBookValidator validator = new CreateBookValidator();
+                ValidationResult result=validator.Validate(createBookCommand);
+
+                validator.ValidateAndThrow(createBookCommand);
                 createBookCommand.Handle();
             }
             catch (Exception ex)
@@ -79,6 +90,10 @@ namespace WebAPI.Controllers
             {
                 updateBookCommand.BookId = id;
                 updateBookCommand.Model = bookModel;
+                UpdateBookValidator validator = new UpdateBookValidator();
+                ValidationResult result = validator.Validate(updateBookCommand);
+
+                validator.ValidateAndThrow(updateBookCommand);
                 updateBookCommand.Handle();
             }
             catch (Exception ex)
@@ -97,6 +112,10 @@ namespace WebAPI.Controllers
             try
             {
                 deleteBookCommand.BookId = id;
+                DeleteBookValidator validator = new DeleteBookValidator();
+                ValidationResult result = validator.Validate(deleteBookCommand);
+
+                validator.ValidateAndThrow(deleteBookCommand);
                 deleteBookCommand.Handle();
             }
             catch (Exception ex)
