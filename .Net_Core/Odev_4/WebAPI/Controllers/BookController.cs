@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebAPI.BookOperations.CreateBook;
+using WebAPI.BookOperations.DeleteBook;
 using WebAPI.BookOperations.GetBookDetail;
 using WebAPI.BookOperations.GetBooks;
 using WebAPI.BookOperations.Updatebook;
@@ -90,8 +91,20 @@ namespace WebAPI.Controllers
 
         // DELETE api/<BookController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            DeleteBookCommand deleteBookCommand = new DeleteBookCommand(_appDbContext);
+            try
+            {
+                deleteBookCommand.BookId = id;
+                deleteBookCommand.Handle();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            return Ok();
         }
     }
 }
