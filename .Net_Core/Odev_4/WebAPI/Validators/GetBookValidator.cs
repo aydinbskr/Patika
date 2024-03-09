@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using WebAPI.BookOperations.GetBookDetail;
+using WebAPI.Application.BookOperations.Queries;
 
 namespace WebAPI.Validators
 {

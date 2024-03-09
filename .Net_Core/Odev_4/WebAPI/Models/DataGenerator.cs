@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Entities;
 
 namespace WebAPI.Models;
 
@@ -14,7 +15,16 @@ public class DataGenerator
             {
                 return;   // Data was already seeded
             }
-
+            context.Genres.AddRange(
+                new Genre
+                {
+                    Name ="Personal Growth"
+                },
+                new Genre
+                {
+                    Name = "Science Finction"
+                }
+                );
             context.Books.AddRange(
                new Book()
                {

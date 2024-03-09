@@ -1,6 +1,6 @@
 ﻿using WebAPI.Models;
 
-namespace WebAPI.BookOperations.DeleteBook
+namespace WebAPI.Application.BookOperations.Commands
 {
     public class DeleteBookCommand
     {
@@ -18,10 +18,10 @@ namespace WebAPI.BookOperations.DeleteBook
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı.");
 
-            _appDbContext.Remove(book);
+            _appDbContext.Books.Remove(book);
             _appDbContext.SaveChanges();
         }
 
-        
+
     }
 }

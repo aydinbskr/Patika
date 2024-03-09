@@ -1,16 +1,13 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.BookOperations.CreateBook;
-using WebAPI.BookOperations.DeleteBook;
-using WebAPI.BookOperations.GetBookDetail;
-using WebAPI.BookOperations.GetBooks;
-using WebAPI.BookOperations.Updatebook;
+using WebAPI.Application.BookOperations.Commands;
 using WebAPI.Models;
 using WebAPI.Validators;
-using static WebAPI.BookOperations.CreateBook.CreateBookCommand;
-using static WebAPI.BookOperations.GetBookDetail.GetBookDetailQuery;
-using static WebAPI.BookOperations.Updatebook.UpdateBookCommand;
+using static WebAPI.Application.BookOperations.Commands.CreateBookCommand;
+using static WebAPI.Application.BookOperations.Queries.GetBookDetailQuery;
+using static WebAPI.Application.BookOperations.Commands.UpdateBookCommand;
+using WebAPI.Application.BookOperations.Queries;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

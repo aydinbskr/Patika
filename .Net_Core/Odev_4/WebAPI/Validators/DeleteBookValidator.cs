@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using WebAPI.BookOperations.DeleteBook;
+using WebAPI.Application.BookOperations.Commands;
 
 namespace WebAPI.Validators
 {

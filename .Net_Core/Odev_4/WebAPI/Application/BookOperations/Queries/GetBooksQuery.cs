@@ -1,6 +1,6 @@
 ﻿using WebAPI.Models;
 
-namespace WebAPI.BookOperations.GetBooks
+namespace WebAPI.Application.BookOperations.Queries
 {
     public class GetBooksQuery
     {

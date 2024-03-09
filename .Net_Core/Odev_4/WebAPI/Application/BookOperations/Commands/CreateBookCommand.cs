@@ -1,6 +1,7 @@
-﻿using WebAPI.Models;
+﻿using WebAPI.Entities;
+using WebAPI.Models;
 
-namespace WebAPI.BookOperations.CreateBook
+namespace WebAPI.Application.BookOperations.Commands
 {
     public class CreateBookCommand
     {
