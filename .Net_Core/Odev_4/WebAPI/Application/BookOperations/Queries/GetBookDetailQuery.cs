@@ -4,9 +4,9 @@ namespace WebAPI.Application.BookOperations.Queries
 {
     public class GetBookDetailQuery
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly IAppDbContext _appDbContext;
         public int BookId { get; set; }
-        public GetBookDetailQuery(AppDbContext appDbContext)
+        public GetBookDetailQuery(IAppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

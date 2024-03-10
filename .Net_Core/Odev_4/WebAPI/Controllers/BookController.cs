@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly IAppDbContext _appDbContext;
 
         public BookController(AppDbContext appDbContext)
         {

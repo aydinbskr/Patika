@@ -5,9 +5,9 @@ namespace WebAPI.Application.BookOperations.Commands
 {
     public class CreateBookCommand
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly IAppDbContext _appDbContext;
         public CreateBookModel Model { get; set; }
-        public CreateBookCommand(AppDbContext appDbContext)
+        public CreateBookCommand(IAppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
@@ -26,7 +26,7 @@ namespace WebAPI.Application.BookOperations.Commands
                 Title = Model.Title
             };
 
-            _appDbContext.Add(dbBook);
+            _appDbContext.Books.Add(dbBook);
             _appDbContext.SaveChanges();
         }
 
