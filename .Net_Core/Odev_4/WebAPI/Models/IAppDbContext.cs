@@ -8,6 +8,8 @@ namespace WebAPI.Models
         DbSet<Book> Books { get; set; }
         DbSet<Genre> Genres { get; set; }
 
+        DbSet<User> Users { get; set; }
+
         int SaveChanges();
     }
 }
