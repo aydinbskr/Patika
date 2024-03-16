@@ -21,6 +21,7 @@ namespace WebAPI.Application.BookOperations.Commands
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.Title = Model.Title != default ? Model.Title : book.Title;
+            book.PublishDate = Model.PublishDate != default ? Model.PublishDate : book.PublishDate;
 
             _appDbContext.SaveChanges();
         }
