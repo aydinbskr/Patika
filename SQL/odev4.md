@@ -1,4 +1,4 @@
-# Ödev-3 Soru Çözümleri
+# Ödev-4 Soru Çözümleri
 
 1. **film** tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
 ```
