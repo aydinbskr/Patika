@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Apartments\ApatmentCreateUseCase\" />
+    <Folder Include="Apartments\Configurations\" />
+    <Folder Include="Apartments\DTOs\" />
+    <Folder Include="Bills\" />
+    <Folder Include="Users\" />
+    <Folder Include="Payments\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiteManagementSystem.Repository\SiteManagementSystem.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
+A
